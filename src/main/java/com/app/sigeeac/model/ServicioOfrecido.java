@@ -7,7 +7,6 @@ package com.app.sigeeac.model;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
-import java.math.BigInteger;
 import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -35,7 +34,6 @@ import javax.xml.bind.annotation.XmlRootElement;
 @NamedQueries({
     @NamedQuery(name = "ServicioOfrecido.findAll", query = "SELECT s FROM ServicioOfrecido s")
     , @NamedQuery(name = "ServicioOfrecido.findBySroId", query = "SELECT s FROM ServicioOfrecido s WHERE s.sroId = :sroId")
-    , @NamedQuery(name = "ServicioOfrecido.findBySroTpsId", query = "SELECT s FROM ServicioOfrecido s WHERE s.sroTpsId = :sroTpsId")
     , @NamedQuery(name = "ServicioOfrecido.findBySroDescripcion", query = "SELECT s FROM ServicioOfrecido s WHERE s.sroDescripcion = :sroDescripcion")
     , @NamedQuery(name = "ServicioOfrecido.findByFecCrea", query = "SELECT s FROM ServicioOfrecido s WHERE s.fecCrea = :fecCrea")
     , @NamedQuery(name = "ServicioOfrecido.findByUsuCrea", query = "SELECT s FROM ServicioOfrecido s WHERE s.usuCrea = :usuCrea")
@@ -51,10 +49,6 @@ public class ServicioOfrecido implements Serializable {
     @NotNull
     @Column(name = "SRO_ID")
     private Integer sroId;
-    @Basic(optional = false)
-    @NotNull
-    @Column(name = "SRO_TPS_ID")
-    private BigInteger sroTpsId;
     @Size(max = 4000)
     @Column(name = "SRO_DESCRIPCION")
     private String sroDescripcion;
@@ -81,6 +75,9 @@ public class ServicioOfrecido implements Serializable {
     @JoinColumn(name = "SRO_EMP_ID", referencedColumnName = "EMP_ID")
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
     private EmpresaServicio sroEmpId;
+    @JoinColumn(name = "SRO_TPS_ID", referencedColumnName = "TPS_ID")
+    @ManyToOne(optional = false, fetch = FetchType.LAZY)
+    private TipoServicio sroTpsId;
 
     public ServicioOfrecido() {
     }
@@ -89,9 +86,8 @@ public class ServicioOfrecido implements Serializable {
         this.sroId = sroId;
     }
 
-    public ServicioOfrecido(Integer sroId, BigInteger sroTpsId, Date fecCrea, String usuCrea, short regActivo) {
+    public ServicioOfrecido(Integer sroId, Date fecCrea, String usuCrea, short regActivo) {
         this.sroId = sroId;
-        this.sroTpsId = sroTpsId;
         this.fecCrea = fecCrea;
         this.usuCrea = usuCrea;
         this.regActivo = regActivo;
@@ -103,14 +99,6 @@ public class ServicioOfrecido implements Serializable {
 
     public void setSroId(Integer sroId) {
         this.sroId = sroId;
-    }
-
-    public BigInteger getSroTpsId() {
-        return sroTpsId;
-    }
-
-    public void setSroTpsId(BigInteger sroTpsId) {
-        this.sroTpsId = sroTpsId;
     }
 
     public String getSroDescripcion() {
@@ -167,6 +155,14 @@ public class ServicioOfrecido implements Serializable {
 
     public void setSroEmpId(EmpresaServicio sroEmpId) {
         this.sroEmpId = sroEmpId;
+    }
+
+    public TipoServicio getSroTpsId() {
+        return sroTpsId;
+    }
+
+    public void setSroTpsId(TipoServicio sroTpsId) {
+        this.sroTpsId = sroTpsId;
     }
 
     @Override

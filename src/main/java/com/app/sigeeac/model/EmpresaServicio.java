@@ -118,6 +118,8 @@ public class EmpresaServicio implements Serializable {
     private Set<Tecnico> tecnicoSet;
     @OneToMany(mappedBy = "cmpEmpId", fetch = FetchType.LAZY)
     private Set<OrdenCompra> ordenCompraSet;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "eqeEmpId", fetch = FetchType.LAZY)
+    private Set<EquipoElectrico> equipoElectricoSet;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "sroEmpId", fetch = FetchType.LAZY)
     private Set<ServicioOfrecido> servicioOfrecidoSet;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "mttEmpId", fetch = FetchType.LAZY)
@@ -275,6 +277,15 @@ public class EmpresaServicio implements Serializable {
 
     public void setOrdenCompraSet(Set<OrdenCompra> ordenCompraSet) {
         this.ordenCompraSet = ordenCompraSet;
+    }
+
+    @XmlTransient
+    public Set<EquipoElectrico> getEquipoElectricoSet() {
+        return equipoElectricoSet;
+    }
+
+    public void setEquipoElectricoSet(Set<EquipoElectrico> equipoElectricoSet) {
+        this.equipoElectricoSet = equipoElectricoSet;
     }
 
     @XmlTransient

@@ -80,6 +80,8 @@ public class TipoEquipoElectrico implements Serializable {
     @NotNull
     @Column(name = "REG_ACTIVO")
     private short regActivo;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "solTeqId", fetch = FetchType.LAZY)
+    private Set<SolicitudCompra> solicitudCompraSet;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "cteTeqId", fetch = FetchType.LAZY)
     private Set<Caracteristica> caracteristicaSet;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "eqeTeqId", fetch = FetchType.LAZY)
@@ -164,6 +166,15 @@ public class TipoEquipoElectrico implements Serializable {
 
     public void setRegActivo(short regActivo) {
         this.regActivo = regActivo;
+    }
+
+    @XmlTransient
+    public Set<SolicitudCompra> getSolicitudCompraSet() {
+        return solicitudCompraSet;
+    }
+
+    public void setSolicitudCompraSet(Set<SolicitudCompra> solicitudCompraSet) {
+        this.solicitudCompraSet = solicitudCompraSet;
     }
 
     @XmlTransient

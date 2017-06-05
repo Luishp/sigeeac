@@ -103,7 +103,7 @@ public class Susuario implements Serializable {
     private String usrUsuario;
     @Basic(optional = false)
     @NotNull
-    @Size(min = 1, max = 20)
+    @Size(min = 1, max = 100)
     @Column(name = "USR_CONTRASENIA")
     private String usrContrasenia;
     @Size(max = 250)

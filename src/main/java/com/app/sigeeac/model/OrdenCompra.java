@@ -118,6 +118,8 @@ public class OrdenCompra implements Serializable {
     @JoinColumn(name = "CMP_TPC_ID", referencedColumnName = "TPC_ID")
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
     private TipoCompra cmpTpcId;
+    @OneToMany(mappedBy = "solCmpId", fetch = FetchType.LAZY)
+    private Set<SolicitudCompra> solicitudCompraSet;
 
     public OrdenCompra() {
     }
@@ -273,6 +275,15 @@ public class OrdenCompra implements Serializable {
 
     public void setCmpTpcId(TipoCompra cmpTpcId) {
         this.cmpTpcId = cmpTpcId;
+    }
+
+    @XmlTransient
+    public Set<SolicitudCompra> getSolicitudCompraSet() {
+        return solicitudCompraSet;
+    }
+
+    public void setSolicitudCompraSet(Set<SolicitudCompra> solicitudCompraSet) {
+        this.solicitudCompraSet = solicitudCompraSet;
     }
 
     @Override

@@ -10,6 +10,7 @@ import java.math.BigDecimal;
 import java.util.Date;
 import java.util.Set;
 import javax.persistence.Basic;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -102,6 +103,8 @@ public class UnidadAdministrativa implements Serializable {
     @JoinColumn(name = "UAD_ING_ID", referencedColumnName = "ING_ID")
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
     private InstitucionGubernamental uadIngId;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "solUadId", fetch = FetchType.LAZY)
+    private Set<SolicitudCompra> solicitudCompraSet;
     @OneToMany(mappedBy = "eqeUadId", fetch = FetchType.LAZY)
     private Set<EquipoElectrico> equipoElectricoSet;
 
@@ -217,6 +220,15 @@ public class UnidadAdministrativa implements Serializable {
 
     public void setUadIngId(InstitucionGubernamental uadIngId) {
         this.uadIngId = uadIngId;
+    }
+
+    @XmlTransient
+    public Set<SolicitudCompra> getSolicitudCompraSet() {
+        return solicitudCompraSet;
+    }
+
+    public void setSolicitudCompraSet(Set<SolicitudCompra> solicitudCompraSet) {
+        this.solicitudCompraSet = solicitudCompraSet;
     }
 
     @XmlTransient

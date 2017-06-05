@@ -105,6 +105,9 @@ public class EquipoElectrico implements Serializable {
     private short regActivo;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "vcaEqeId", fetch = FetchType.LAZY)
     private Set<ValorCaracteristica> valorCaracteristicaSet;
+    @JoinColumn(name = "EQE_EMP_ID", referencedColumnName = "EMP_ID")
+    @ManyToOne(optional = false, fetch = FetchType.LAZY)
+    private EmpresaServicio eqeEmpId;
     @JoinColumn(name = "EQE_CMD_ID", referencedColumnName = "CMD_ID")
     @ManyToOne(fetch = FetchType.LAZY)
     private OrdenCompraDet eqeCmdId;
@@ -238,6 +241,14 @@ public class EquipoElectrico implements Serializable {
 
     public void setValorCaracteristicaSet(Set<ValorCaracteristica> valorCaracteristicaSet) {
         this.valorCaracteristicaSet = valorCaracteristicaSet;
+    }
+
+    public EmpresaServicio getEqeEmpId() {
+        return eqeEmpId;
+    }
+
+    public void setEqeEmpId(EmpresaServicio eqeEmpId) {
+        this.eqeEmpId = eqeEmpId;
     }
 
     public OrdenCompraDet getEqeCmdId() {

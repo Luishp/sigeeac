@@ -39,7 +39,7 @@ import javax.xml.bind.annotation.XmlTransient;
     @NamedQuery(name = "Smenu.findAll", query = "SELECT s FROM Smenu s")
     , @NamedQuery(name = "Smenu.findByMnuId", query = "SELECT s FROM Smenu s WHERE s.mnuId = :mnuId")
     , @NamedQuery(name = "Smenu.findByMnuNombre", query = "SELECT s FROM Smenu s WHERE s.mnuNombre = :mnuNombre")
-    , @NamedQuery(name = "Smenu.findByMnuMenuPadre", query = "SELECT s FROM Smenu s WHERE s.mnuMenuPadre = :mnuMenuPadre")
+    , @NamedQuery(name = "Smenu.findByMnuUrl", query = "SELECT s FROM Smenu s WHERE s.mnuUrl = :mnuUrl")
     , @NamedQuery(name = "Smenu.findByMnuDescripcion", query = "SELECT s FROM Smenu s WHERE s.mnuDescripcion = :mnuDescripcion")
     , @NamedQuery(name = "Smenu.findByFecCrea", query = "SELECT s FROM Smenu s WHERE s.fecCrea = :fecCrea")
     , @NamedQuery(name = "Smenu.findByUsuCrea", query = "SELECT s FROM Smenu s WHERE s.usuCrea = :usuCrea")
@@ -61,8 +61,8 @@ public class Smenu implements Serializable {
     @Column(name = "MNU_NOMBRE")
     private String mnuNombre;
     @Size(max = 250)
-    @Column(name = "MNU_MENU_PADRE")
-    private String mnuMenuPadre;
+    @Column(name = "MNU_URL")
+    private String mnuUrl;
     @Size(max = 4000)
     @Column(name = "MNU_DESCRIPCION")
     private String mnuDescripcion;
@@ -125,12 +125,12 @@ public class Smenu implements Serializable {
         this.mnuNombre = mnuNombre;
     }
 
-    public String getMnuMenuPadre() {
-        return mnuMenuPadre;
+    public String getMnuUrl() {
+        return mnuUrl;
     }
 
-    public void setMnuMenuPadre(String mnuMenuPadre) {
-        this.mnuMenuPadre = mnuMenuPadre;
+    public void setMnuUrl(String mnuUrl) {
+        this.mnuUrl = mnuUrl;
     }
 
     public String getMnuDescripcion() {
