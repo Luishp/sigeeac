@@ -15,5 +15,4 @@ import org.springframework.data.repository.CrudRepository;
 public interface SmenuDao extends CrudRepository<Smenu, Integer>{
     Integer findByMnuId();
     String findByMnuNombre();
-    String findByMnuMenuPadre();
 }
