@@ -55,47 +55,47 @@ public class OrdenCompraDet implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "CMD_ID")
-    private Integer cmdId;
+    public Integer cmdId;
     @Basic(optional = false)
     @NotNull
     @Column(name = "CMD_CANTIDAD")
-    private BigInteger cmdCantidad;
+    public BigInteger cmdCantidad;
     @Basic(optional = false)
     @NotNull
     @Column(name = "CMD_PRECIO_UNITARIO")
-    private BigDecimal cmdPrecioUnitario;
+    public BigDecimal cmdPrecioUnitario;
     @Basic(optional = false)
     @NotNull
     @Column(name = "CMD_GARANTIA")
-    private BigInteger cmdGarantia;
+    public BigInteger cmdGarantia;
     @Size(max = 4000)
     @Column(name = "CMD_DESCRIPCION")
-    private String cmdDescripcion;
+    public String cmdDescripcion;
     @Basic(optional = false)
     @NotNull
     @Column(name = "FEC_CREA")
     @Temporal(TemporalType.TIMESTAMP)
-    private Date fecCrea;
+    public Date fecCrea;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 6)
     @Column(name = "USU_CREA")
-    private String usuCrea;
+    public String usuCrea;
     @Column(name = "FEC_MODI")
     @Temporal(TemporalType.TIMESTAMP)
-    private Date fecModi;
+    public Date fecModi;
     @Size(max = 6)
     @Column(name = "USU_MODI")
-    private String usuModi;
+    public String usuModi;
     @Basic(optional = false)
     @NotNull
     @Column(name = "REG_ACTIVO")
-    private short regActivo;
+    public short regActivo;
     @JoinColumn(name = "CMD_CMP_ID", referencedColumnName = "CMP_ID")
     @ManyToOne(fetch = FetchType.LAZY)
-    private OrdenCompra cmdCmpId;
-    @OneToMany(mappedBy = "eqeCmdId", fetch = FetchType.LAZY)
-    private Set<EquipoElectrico> equipoElectricoSet;
+    public OrdenCompra cmdCmpId;
+    /*@OneToMany(mappedBy = "eqeCmdId", fetch = FetchType.LAZY)
+    public Set<EquipoElectrico> equipoElectricoSet;*/
 
     public OrdenCompraDet() {
     }
@@ -202,14 +202,14 @@ public class OrdenCompraDet implements Serializable {
         this.cmdCmpId = cmdCmpId;
     }
 
-    @XmlTransient
+    /*@XmlTransient
     public Set<EquipoElectrico> getEquipoElectricoSet() {
         return equipoElectricoSet;
     }
 
     public void setEquipoElectricoSet(Set<EquipoElectrico> equipoElectricoSet) {
         this.equipoElectricoSet = equipoElectricoSet;
-    }
+    }*/
 
     @Override
     public int hashCode() {

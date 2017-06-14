@@ -54,45 +54,45 @@ public class Smenu implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "MNU_ID")
-    private Integer mnuId;
+    public Integer mnuId;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 80)
     @Column(name = "MNU_NOMBRE")
-    private String mnuNombre;
+    public String mnuNombre;
     @Size(max = 250)
     @Column(name = "MNU_URL")
-    private String mnuUrl;
+    public String mnuUrl;
     @Size(max = 4000)
     @Column(name = "MNU_DESCRIPCION")
-    private String mnuDescripcion;
+    public String mnuDescripcion;
     @Basic(optional = false)
     @NotNull
     @Column(name = "FEC_CREA")
     @Temporal(TemporalType.TIMESTAMP)
-    private Date fecCrea;
+    public Date fecCrea;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 6)
     @Column(name = "USU_CREA")
-    private String usuCrea;
+    public String usuCrea;
     @Column(name = "FEC_MODI")
     @Temporal(TemporalType.TIMESTAMP)
-    private Date fecModi;
+    public Date fecModi;
     @Size(max = 6)
     @Column(name = "USU_MODI")
-    private String usuModi;
+    public String usuModi;
     @Basic(optional = false)
     @NotNull
     @Column(name = "REG_ACTIVO")
-    private short regActivo;
-    @OneToMany(mappedBy = "mnuPadreId", fetch = FetchType.LAZY)
-    private Set<Smenu> smenuSet;
+    public short regActivo;
+    /*@OneToMany(mappedBy = "mnuPadreId", fetch = FetchType.LAZY)
+    private Set<Smenu> smenuSet;*/
     @JoinColumn(name = "MNU_PADRE_ID", referencedColumnName = "MNU_ID")
     @ManyToOne(fetch = FetchType.LAZY)
     private Smenu mnuPadreId;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "perMnuId", fetch = FetchType.LAZY)
-    private Set<Spermiso> spermisoSet;
+    /*@OneToMany(cascade = CascadeType.ALL, mappedBy = "perMnuId", fetch = FetchType.LAZY)
+    private Set<Spermiso> spermisoSet;*/
 
     public Smenu() {
     }
@@ -181,14 +181,14 @@ public class Smenu implements Serializable {
         this.regActivo = regActivo;
     }
 
-    @XmlTransient
+    /*@XmlTransient
     public Set<Smenu> getSmenuSet() {
         return smenuSet;
     }
 
     public void setSmenuSet(Set<Smenu> smenuSet) {
         this.smenuSet = smenuSet;
-    }
+    }*/
 
     public Smenu getMnuPadreId() {
         return mnuPadreId;
@@ -198,14 +198,14 @@ public class Smenu implements Serializable {
         this.mnuPadreId = mnuPadreId;
     }
 
-    @XmlTransient
+    /*@XmlTransient
     public Set<Spermiso> getSpermisoSet() {
         return spermisoSet;
     }
 
     public void setSpermisoSet(Set<Spermiso> spermisoSet) {
         this.spermisoSet = spermisoSet;
-    }
+    }*/
 
     @Override
     public int hashCode() {

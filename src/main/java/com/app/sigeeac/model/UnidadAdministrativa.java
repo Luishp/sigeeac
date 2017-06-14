@@ -56,57 +56,57 @@ public class UnidadAdministrativa implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "UAD_ID")
-    private Integer uadId;
+    public Integer uadId;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 80)
     @Column(name = "UAD_NOMBRE")
-    private String uadNombre;
+    public String uadNombre;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 80)
     @Column(name = "UAD_DEPARTAMENTO")
-    private String uadDepartamento;
+    public String uadDepartamento;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 80)
     @Column(name = "UAD_MUNICIPIO")
-    private String uadMunicipio;
+    public String uadMunicipio;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 80)
     @Column(name = "UAD_JEFE_UNIDAD")
-    private String uadJefeUnidad;
+    public String uadJefeUnidad;
     @Size(max = 4000)
     @Column(name = "UAD_DESCRIPCION")
-    private String uadDescripcion;
+    public String uadDescripcion;
     @Basic(optional = false)
     @NotNull
     @Column(name = "FEC_CREA")
     @Temporal(TemporalType.TIMESTAMP)
-    private Date fecCrea;
+    public Date fecCrea;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 6)
     @Column(name = "USU_CREA")
-    private String usuCrea;
+    public String usuCrea;
     @Column(name = "FEC_MODI")
     @Temporal(TemporalType.TIMESTAMP)
-    private Date fecModi;
+    public Date fecModi;
     @Size(max = 6)
     @Column(name = "USU_MODI")
-    private String usuModi;
+    public String usuModi;
     @Basic(optional = false)
     @NotNull
     @Column(name = "REG_ACTIVO")
-    private short regActivo;
+    public short regActivo;
     @JoinColumn(name = "UAD_ING_ID", referencedColumnName = "ING_ID")
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
-    private InstitucionGubernamental uadIngId;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "solUadId", fetch = FetchType.LAZY)
-    private Set<SolicitudCompra> solicitudCompraSet;
+    public InstitucionGubernamental uadIngId;
+    /*@OneToMany(cascade = CascadeType.ALL, mappedBy = "solUadId", fetch = FetchType.LAZY)
+    public Set<SolicitudCompra> solicitudCompraSet;
     @OneToMany(mappedBy = "eqeUadId", fetch = FetchType.LAZY)
-    private Set<EquipoElectrico> equipoElectricoSet;
+    public Set<EquipoElectrico> equipoElectricoSet;*/
 
     public UnidadAdministrativa() {
     }
@@ -222,7 +222,7 @@ public class UnidadAdministrativa implements Serializable {
         this.uadIngId = uadIngId;
     }
 
-    @XmlTransient
+    /*@XmlTransient
     public Set<SolicitudCompra> getSolicitudCompraSet() {
         return solicitudCompraSet;
     }
@@ -238,7 +238,7 @@ public class UnidadAdministrativa implements Serializable {
 
     public void setEquipoElectricoSet(Set<EquipoElectrico> equipoElectricoSet) {
         this.equipoElectricoSet = equipoElectricoSet;
-    }
+    }*/
 
     @Override
     public int hashCode() {

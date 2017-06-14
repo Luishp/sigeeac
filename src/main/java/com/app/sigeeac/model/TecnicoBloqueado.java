@@ -48,36 +48,36 @@ public class TecnicoBloqueado implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "TCB_ID")
-    private Integer tcbId;
+    public Integer tcbId;
     @Size(max = 4000)
     @Column(name = "TCB_DESCRIPCION")
-    private String tcbDescripcion;
+    public String tcbDescripcion;
     @Basic(optional = false)
     @NotNull
     @Column(name = "FEC_CREA")
     @Temporal(TemporalType.TIMESTAMP)
-    private Date fecCrea;
+    public Date fecCrea;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 6)
     @Column(name = "USU_CREA")
-    private String usuCrea;
+    public String usuCrea;
     @Column(name = "FEC_MODI")
     @Temporal(TemporalType.TIMESTAMP)
-    private Date fecModi;
+    public Date fecModi;
     @Size(max = 6)
     @Column(name = "USU_MODI")
-    private String usuModi;
+    public String usuModi;
     @Basic(optional = false)
     @NotNull
     @Column(name = "REG_ACTIVO")
-    private short regActivo;
+    public short regActivo;
     @JoinColumn(name = "TCB_ING_ID", referencedColumnName = "ING_ID")
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
-    private InstitucionGubernamental tcbIngId;
+    public InstitucionGubernamental tcbIngId;
     @JoinColumn(name = "TCB_TEC_ID", referencedColumnName = "TEC_ID")
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
-    private Tecnico tcbTecId;
+    public Tecnico tcbTecId;
 
     public TecnicoBloqueado() {
     }

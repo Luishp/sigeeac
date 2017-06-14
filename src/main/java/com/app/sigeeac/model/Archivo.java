@@ -51,48 +51,48 @@ public class Archivo implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "ARC_ID")
-    private Integer arcId;
+    public Integer arcId;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 80)
     @Column(name = "ARC_NOMBRE")
-    private String arcNombre;
+    public String arcNombre;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 250)
     @Column(name = "ARC_ARCHIVO")
-    private String arcArchivo;
+    public String arcArchivo;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 5)
     @Column(name = "ARC_TIPO")
-    private String arcTipo;
+    public String arcTipo;
     @Size(max = 4000)
     @Column(name = "ARC_DESCRIPCION")
-    private String arcDescripcion;
+    public String arcDescripcion;
     @Basic(optional = false)
     @NotNull
     @Column(name = "FEC_CREA")
     @Temporal(TemporalType.TIMESTAMP)
-    private Date fecCrea;
+    public Date fecCrea;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 6)
     @Column(name = "USU_CREA")
-    private String usuCrea;
+    public String usuCrea;
     @Column(name = "FEC_MODI")
     @Temporal(TemporalType.TIMESTAMP)
-    private Date fecModi;
+    public Date fecModi;
     @Size(max = 6)
     @Column(name = "USU_MODI")
-    private String usuModi;
+    public String usuModi;
     @Basic(optional = false)
     @NotNull
     @Column(name = "REG_ACTIVO")
-    private short regActivo;
+    public short regActivo;
     @JoinColumn(name = "ARC_MTT_ID", referencedColumnName = "MTT_ID")
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
-    private Mantenimiento arcMttId;
+    public Mantenimiento arcMttId;
 
     public Archivo() {
     }

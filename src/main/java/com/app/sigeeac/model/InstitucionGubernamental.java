@@ -54,56 +54,56 @@ public class InstitucionGubernamental implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "ING_ID")
-    private Integer ingId;
+    public Integer ingId;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 20)
     @Column(name = "ING_CODIGO")
-    private String ingCodigo;
+    public String ingCodigo;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 80)
     @Column(name = "ING_NOMBRE")
-    private String ingNombre;
+    public String ingNombre;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 250)
     @Column(name = "ING_DIRECCION")
-    private String ingDireccion;
+    public String ingDireccion;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 20)
     @Column(name = "ING_TELEFONO")
-    private String ingTelefono;
+    public String ingTelefono;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 100)
     @Column(name = "ING_CORREO_ELECTRONICO")
-    private String ingCorreoElectronico;
+    public String ingCorreoElectronico;
     @Size(max = 4000)
     @Column(name = "ING_DESCRIPCION")
-    private String ingDescripcion;
+    public String ingDescripcion;
     @Basic(optional = false)
     @NotNull
     @Column(name = "FEC_CREA")
     @Temporal(TemporalType.TIMESTAMP)
-    private Date fecCrea;
+    public Date fecCrea;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 6)
     @Column(name = "USU_CREA")
-    private String usuCrea;
+    public String usuCrea;
     @Column(name = "FEC_MODI")
     @Temporal(TemporalType.TIMESTAMP)
-    private Date fecModi;
+    public Date fecModi;
     @Size(max = 6)
     @Column(name = "USU_MODI")
-    private String usuModi;
+    public String usuModi;
     @Basic(optional = false)
     @NotNull
     @Column(name = "REG_ACTIVO")
-    private short regActivo;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "uadIngId", fetch = FetchType.LAZY)
+    public short regActivo;
+    /*@OneToMany(cascade = CascadeType.ALL, mappedBy = "uadIngId", fetch = FetchType.LAZY)
     private Set<UnidadAdministrativa> unidadAdministrativaSet;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "cmpIngId", fetch = FetchType.LAZY)
     private Set<OrdenCompra> ordenCompraSet;
@@ -118,7 +118,7 @@ public class InstitucionGubernamental implements Serializable {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "rmcIngId", fetch = FetchType.LAZY)
     private Set<RestringeMontoCompra> restringeMontoCompraSet;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "usrIngId", fetch = FetchType.LAZY)
-    private Set<Susuario> susuarioSet;
+    private Set<Susuario> susuarioSet;*/
 
     public InstitucionGubernamental() {
     }
@@ -235,7 +235,7 @@ public class InstitucionGubernamental implements Serializable {
         this.regActivo = regActivo;
     }
 
-    @XmlTransient
+    /*@XmlTransient
     public Set<UnidadAdministrativa> getUnidadAdministrativaSet() {
         return unidadAdministrativaSet;
     }
@@ -305,7 +305,7 @@ public class InstitucionGubernamental implements Serializable {
 
     public void setSusuarioSet(Set<Susuario> susuarioSet) {
         this.susuarioSet = susuarioSet;
-    }
+    }*/
 
     @Override
     public int hashCode() {

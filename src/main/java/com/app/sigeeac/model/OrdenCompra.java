@@ -55,71 +55,71 @@ public class OrdenCompra implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "CMP_ID")
-    private Integer cmpId;
+    public Integer cmpId;
     @Basic(optional = false)
     @NotNull
     @Column(name = "CMP_FECHA_COMPRA")
     @Temporal(TemporalType.TIMESTAMP)
-    private Date cmpFechaCompra;
+    public Date cmpFechaCompra;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 20)
     @Column(name = "CMP_NUMERO_COMPROBANTE")
-    private String cmpNumeroComprobante;
+    public String cmpNumeroComprobante;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 250)
     @Column(name = "CMP_LUGAR")
-    private String cmpLugar;
+    public String cmpLugar;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 80)
     @Column(name = "CMP_FORMA_PAGO")
-    private String cmpFormaPago;
+    public String cmpFormaPago;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 20)
     @Column(name = "CMP_NUM_REQUERIMIENTO")
-    private String cmpNumRequerimiento;
+    public String cmpNumRequerimiento;
     @Size(max = 4000)
     @Column(name = "CMP_DESCRIPCION")
-    private String cmpDescripcion;
+    public String cmpDescripcion;
     @Basic(optional = false)
     @NotNull
     @Column(name = "FEC_CREA")
     @Temporal(TemporalType.TIMESTAMP)
-    private Date fecCrea;
+    public Date fecCrea;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 6)
     @Column(name = "USU_CREA")
-    private String usuCrea;
+    public String usuCrea;
     @Column(name = "FEC_MODI")
     @Temporal(TemporalType.TIMESTAMP)
-    private Date fecModi;
+    public Date fecModi;
     @Size(max = 6)
     @Column(name = "USU_MODI")
-    private String usuModi;
+    public String usuModi;
     @Basic(optional = false)
     @NotNull
     @Column(name = "REG_ACTIVO")
-    private short regActivo;
-    @OneToMany(mappedBy = "cmdCmpId", fetch = FetchType.LAZY)
-    private Set<OrdenCompraDet> ordenCompraDetSet;
+    public short regActivo;
+    /*@OneToMany(mappedBy = "cmdCmpId", fetch = FetchType.LAZY)
+    private Set<OrdenCompraDet> ordenCompraDetSet;*/
     @JoinColumn(name = "CMP_EMP_ID", referencedColumnName = "EMP_ID")
     @ManyToOne(fetch = FetchType.LAZY)
-    private EmpresaServicio cmpEmpId;
+    public EmpresaServicio cmpEmpId;
     @JoinColumn(name = "CMP_ING_ID", referencedColumnName = "ING_ID")
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
-    private InstitucionGubernamental cmpIngId;
+    public InstitucionGubernamental cmpIngId;
     @JoinColumn(name = "CMP_USR_ID", referencedColumnName = "USR_ID")
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
-    private Susuario cmpUsrId;
+    public Susuario cmpUsrId;
     @JoinColumn(name = "CMP_TPC_ID", referencedColumnName = "TPC_ID")
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
-    private TipoCompra cmpTpcId;
-    @OneToMany(mappedBy = "solCmpId", fetch = FetchType.LAZY)
-    private Set<SolicitudCompra> solicitudCompraSet;
+    public TipoCompra cmpTpcId;
+    /*@OneToMany(mappedBy = "solCmpId", fetch = FetchType.LAZY)
+    public Set<SolicitudCompra> solicitudCompraSet;*/
 
     public OrdenCompra() {
     }
@@ -236,14 +236,14 @@ public class OrdenCompra implements Serializable {
         this.regActivo = regActivo;
     }
 
-    @XmlTransient
+    /*@XmlTransient
     public Set<OrdenCompraDet> getOrdenCompraDetSet() {
         return ordenCompraDetSet;
     }
 
     public void setOrdenCompraDetSet(Set<OrdenCompraDet> ordenCompraDetSet) {
         this.ordenCompraDetSet = ordenCompraDetSet;
-    }
+    }*/
 
     public EmpresaServicio getCmpEmpId() {
         return cmpEmpId;
@@ -277,14 +277,14 @@ public class OrdenCompra implements Serializable {
         this.cmpTpcId = cmpTpcId;
     }
 
-    @XmlTransient
+    /*@XmlTransient
     public Set<SolicitudCompra> getSolicitudCompraSet() {
         return solicitudCompraSet;
     }
 
     public void setSolicitudCompraSet(Set<SolicitudCompra> solicitudCompraSet) {
         this.solicitudCompraSet = solicitudCompraSet;
-    }
+    }*/
 
     @Override
     public int hashCode() {

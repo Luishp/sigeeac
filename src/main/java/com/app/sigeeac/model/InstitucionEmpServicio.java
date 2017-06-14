@@ -47,36 +47,36 @@ public class InstitucionEmpServicio implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "IES_ID")
-    private Integer iesId;
+    public Integer iesId;
     @Size(max = 4000)
     @Column(name = "IES_DESCRIPCION")
-    private String iesDescripcion;
+    public String iesDescripcion;
     @Basic(optional = false)
     @NotNull
     @Column(name = "FEC_CREA")
     @Temporal(TemporalType.TIMESTAMP)
-    private Date fecCrea;
+    public Date fecCrea;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 6)
     @Column(name = "USU_CREA")
-    private String usuCrea;
+    public String usuCrea;
     @Column(name = "FEC_MODI")
     @Temporal(TemporalType.TIMESTAMP)
-    private Date fecModi;
+    public Date fecModi;
     @Size(max = 6)
     @Column(name = "USU_MODI")
-    private String usuModi;
+    public String usuModi;
     @Basic(optional = false)
     @NotNull
     @Column(name = "REG_ACTIVO")
-    private short regActivo;
+    public short regActivo;
     @JoinColumn(name = "IES_EMP_ID", referencedColumnName = "EMP_ID")
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
-    private EmpresaServicio iesEmpId;
+    public EmpresaServicio iesEmpId;
     @JoinColumn(name = "IES_ING_ID", referencedColumnName = "ING_ID")
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
-    private InstitucionGubernamental iesIngId;
+    public InstitucionGubernamental iesIngId;
 
     public InstitucionEmpServicio() {
     }

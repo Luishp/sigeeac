@@ -49,41 +49,41 @@ public class Spermiso implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "PER_ID")
-    private Integer perId;
+    public Integer perId;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 80)
     @Column(name = "PER_NOMBRE")
-    private String perNombre;
+    public String perNombre;
     @Size(max = 4000)
     @Column(name = "PER_DESCRIPCION")
-    private String perDescripcion;
+    public String perDescripcion;
     @Basic(optional = false)
     @NotNull
     @Column(name = "FEC_CREA")
     @Temporal(TemporalType.TIMESTAMP)
-    private Date fecCrea;
+    public Date fecCrea;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 6)
     @Column(name = "USU_CREA")
-    private String usuCrea;
+    public String usuCrea;
     @Column(name = "FEC_MODI")
     @Temporal(TemporalType.TIMESTAMP)
-    private Date fecModi;
+    public Date fecModi;
     @Size(max = 6)
     @Column(name = "USU_MODI")
-    private String usuModi;
+    public String usuModi;
     @Basic(optional = false)
     @NotNull
     @Column(name = "REG_ACTIVO")
-    private short regActivo;
+    public short regActivo;
     @JoinColumn(name = "PER_MNU_ID", referencedColumnName = "MNU_ID")
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
-    private Smenu perMnuId;
+    public Smenu perMnuId;
     @JoinColumn(name = "PER_ROL_ID", referencedColumnName = "ROL_ID")
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
-    private Srol perRolId;
+    public Srol perRolId;
 
     public Spermiso() {
     }

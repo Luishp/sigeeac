@@ -47,42 +47,42 @@ public class Bitacora implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "BIT_ID")
-    private Integer bitId;
+    public Integer bitId;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 80)
     @Column(name = "BIT_NOMBRE_TABLA")
-    private String bitNombreTabla;
+    public String bitNombreTabla;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 4000)
     @Column(name = "BIT_ESTADO_ANTERIOR")
-    private String bitEstadoAnterior;
+    public String bitEstadoAnterior;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 4000)
     @Column(name = "BIT_ESTADO_NUEVO")
-    private String bitEstadoNuevo;
+    public String bitEstadoNuevo;
     @Basic(optional = false)
     @NotNull
     @Column(name = "FEC_CREA")
     @Temporal(TemporalType.TIMESTAMP)
-    private Date fecCrea;
+    public Date fecCrea;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 6)
     @Column(name = "USU_CREA")
-    private String usuCrea;
+    public String usuCrea;
     @Column(name = "FEC_MODI")
     @Temporal(TemporalType.TIMESTAMP)
-    private Date fecModi;
+    public Date fecModi;
     @Size(max = 6)
     @Column(name = "USU_MODI")
-    private String usuModi;
+    public String usuModi;
     @Basic(optional = false)
     @NotNull
     @Column(name = "REG_ACTIVO")
-    private short regActivo;
+    public short regActivo;
 
     public Bitacora() {
     }

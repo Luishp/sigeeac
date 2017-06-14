@@ -52,42 +52,42 @@ public class ConfiguracionSistema implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "CFG_ID")
-    private Integer cfgId;
+    public Integer cfgId;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 80)
     @Column(name = "CFG_NOMBRE")
-    private String cfgNombre;
+    public String cfgNombre;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 80)
     @Column(name = "CFG_VALOR")
-    private String cfgValor;
+    public String cfgValor;
     @Size(max = 4000)
     @Column(name = "CFG_DESCRIPCION")
-    private String cfgDescripcion;
+    public String cfgDescripcion;
     @Basic(optional = false)
     @NotNull
     @Column(name = "FEC_CREA")
     @Temporal(TemporalType.TIMESTAMP)
-    private Date fecCrea;
+    public Date fecCrea;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 6)
     @Column(name = "USU_CREA")
-    private String usuCrea;
+    public String usuCrea;
     @Column(name = "FEC_MODI")
     @Temporal(TemporalType.TIMESTAMP)
-    private Date fecModi;
+    public Date fecModi;
     @Size(max = 6)
     @Column(name = "USU_MODI")
-    private String usuModi;
+    public String usuModi;
     @Basic(optional = false)
     @NotNull
     @Column(name = "REG_ACTIVO")
-    private short regActivo;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "incCfgId", fetch = FetchType.LAZY)
-    private Set<InstitucionConfiguracion> institucionConfiguracionSet;
+    public short regActivo;
+    /*@OneToMany(cascade = CascadeType.ALL, mappedBy = "incCfgId", fetch = FetchType.LAZY)
+    public Set<InstitucionConfiguracion> institucionConfiguracionSet;*/
 
     public ConfiguracionSistema() {
     }
@@ -177,14 +177,14 @@ public class ConfiguracionSistema implements Serializable {
         this.regActivo = regActivo;
     }
 
-    @XmlTransient
+    /*@XmlTransient
     public Set<InstitucionConfiguracion> getInstitucionConfiguracionSet() {
         return institucionConfiguracionSet;
     }
 
     public void setInstitucionConfiguracionSet(Set<InstitucionConfiguracion> institucionConfiguracionSet) {
         this.institucionConfiguracionSet = institucionConfiguracionSet;
-    }
+    }*/
 
     @Override
     public int hashCode() {

@@ -54,47 +54,47 @@ public class Tecnico implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "TEC_ID")
-    private Integer tecId;
+    public Integer tecId;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 80)
     @Column(name = "TEC_NOMBRE")
-    private String tecNombre;
+    public String tecNombre;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 80)
     @Column(name = "TEC_APELLIDO")
-    private String tecApellido;
+    public String tecApellido;
     @Size(max = 4000)
     @Column(name = "TEC_DESCRIPCION")
-    private String tecDescripcion;
+    public String tecDescripcion;
     @Basic(optional = false)
     @NotNull
     @Column(name = "FEC_CREA")
     @Temporal(TemporalType.TIMESTAMP)
-    private Date fecCrea;
+    public Date fecCrea;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 6)
     @Column(name = "USU_CREA")
-    private String usuCrea;
+    public String usuCrea;
     @Column(name = "FEC_MODI")
     @Temporal(TemporalType.TIMESTAMP)
-    private Date fecModi;
+    public Date fecModi;
     @Size(max = 6)
     @Column(name = "USU_MODI")
-    private String usuModi;
+    public String usuModi;
     @Basic(optional = false)
     @NotNull
     @Column(name = "REG_ACTIVO")
-    private short regActivo;
+    public short regActivo;
     @JoinColumn(name = "TEC_EMP_ID", referencedColumnName = "EMP_ID")
     @ManyToOne(fetch = FetchType.LAZY)
-    private EmpresaServicio tecEmpId;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "tcbTecId", fetch = FetchType.LAZY)
-    private Set<TecnicoBloqueado> tecnicoBloqueadoSet;
+    public EmpresaServicio tecEmpId;
+    /*@OneToMany(cascade = CascadeType.ALL, mappedBy = "tcbTecId", fetch = FetchType.LAZY)
+    public Set<TecnicoBloqueado> tecnicoBloqueadoSet;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "eqtTecId", fetch = FetchType.LAZY)
-    private Set<EquipoTrabajo> equipoTrabajoSet;
+    public Set<EquipoTrabajo> equipoTrabajoSet;*/
 
     public Tecnico() {
     }
@@ -192,7 +192,7 @@ public class Tecnico implements Serializable {
         this.tecEmpId = tecEmpId;
     }
 
-    @XmlTransient
+    /*@XmlTransient
     public Set<TecnicoBloqueado> getTecnicoBloqueadoSet() {
         return tecnicoBloqueadoSet;
     }
@@ -208,7 +208,7 @@ public class Tecnico implements Serializable {
 
     public void setEquipoTrabajoSet(Set<EquipoTrabajo> equipoTrabajoSet) {
         this.equipoTrabajoSet = equipoTrabajoSet;
-    }
+    }*/
 
     @Override
     public int hashCode() {

@@ -57,64 +57,64 @@ public class EmpresaServicio implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "EMP_ID")
-    private Integer empId;
+    public Integer empId;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 80)
     @Column(name = "EMP_NOMBRE")
-    private String empNombre;
+    public String empNombre;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 250)
     @Column(name = "EMP_DIRECCION")
-    private String empDireccion;
+    public String empDireccion;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 80)
     @Column(name = "EMP_NOMBRE_CONTACTO")
-    private String empNombreContacto;
+    public String empNombreContacto;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 20)
     @Column(name = "EMP_TEL_CONTACTO")
-    private String empTelContacto;
+    public String empTelContacto;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 100)
     @Column(name = "EMP_CORREO_ELECTRONICO")
-    private String empCorreoElectronico;
+    public String empCorreoElectronico;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 17)
     @Column(name = "EMP_NIT")
-    private String empNit;
+    public String empNit;
     @Size(max = 250)
     @Column(name = "EMP_LOGO")
-    private String empLogo;
+    public String empLogo;
     @Size(max = 4000)
     @Column(name = "EMP_DESCRIPCION")
-    private String empDescripcion;
+    public String empDescripcion;
     @Basic(optional = false)
     @NotNull
     @Column(name = "FEC_CREA")
     @Temporal(TemporalType.TIMESTAMP)
-    private Date fecCrea;
+    public Date fecCrea;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 6)
     @Column(name = "USU_CREA")
-    private String usuCrea;
+    public String usuCrea;
     @Column(name = "FEC_MODI")
     @Temporal(TemporalType.TIMESTAMP)
-    private Date fecModi;
+    public Date fecModi;
     @Size(max = 6)
     @Column(name = "USU_MODI")
-    private String usuModi;
+    public String usuModi;
     @Basic(optional = false)
     @NotNull
     @Column(name = "REG_ACTIVO")
-    private short regActivo;
-    @OneToMany(mappedBy = "tecEmpId", fetch = FetchType.LAZY)
+    public short regActivo;
+    /*@OneToMany(mappedBy = "tecEmpId", fetch = FetchType.LAZY)
     private Set<Tecnico> tecnicoSet;
     @OneToMany(mappedBy = "cmpEmpId", fetch = FetchType.LAZY)
     private Set<OrdenCompra> ordenCompraSet;
@@ -127,7 +127,7 @@ public class EmpresaServicio implements Serializable {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "iesEmpId", fetch = FetchType.LAZY)
     private Set<InstitucionEmpServicio> institucionEmpServicioSet;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "rmcEmpId", fetch = FetchType.LAZY)
-    private Set<RestringeMontoCompra> restringeMontoCompraSet;
+    private Set<RestringeMontoCompra> restringeMontoCompraSet;*/
 
     public EmpresaServicio() {
     }
@@ -261,7 +261,7 @@ public class EmpresaServicio implements Serializable {
         this.regActivo = regActivo;
     }
 
-    @XmlTransient
+    /*@XmlTransient
     public Set<Tecnico> getTecnicoSet() {
         return tecnicoSet;
     }
@@ -322,7 +322,7 @@ public class EmpresaServicio implements Serializable {
 
     public void setRestringeMontoCompraSet(Set<RestringeMontoCompra> restringeMontoCompraSet) {
         this.restringeMontoCompraSet = restringeMontoCompraSet;
-    }
+    }*/
 
     @Override
     public int hashCode() {

@@ -51,37 +51,37 @@ public class TipoMantenimiento implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "TMT_ID")
-    private Integer tmtId;
+    public Integer tmtId;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 80)
     @Column(name = "TMT_NOMBRE")
-    private String tmtNombre;
+    public String tmtNombre;
     @Size(max = 4000)
     @Column(name = "TMT_DESCRIPCION")
-    private String tmtDescripcion;
+    public String tmtDescripcion;
     @Basic(optional = false)
     @NotNull
     @Column(name = "FEC_CREA")
     @Temporal(TemporalType.TIMESTAMP)
-    private Date fecCrea;
+    public Date fecCrea;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 6)
     @Column(name = "USU_CREA")
-    private String usuCrea;
+    public String usuCrea;
     @Column(name = "FEC_MODI")
     @Temporal(TemporalType.TIMESTAMP)
-    private Date fecModi;
+    public Date fecModi;
     @Size(max = 6)
     @Column(name = "USU_MODI")
-    private String usuModi;
+    public String usuModi;
     @Basic(optional = false)
     @NotNull
     @Column(name = "REG_ACTIVO")
-    private short regActivo;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "mttTmtId", fetch = FetchType.LAZY)
-    private Set<Mantenimiento> mantenimientoSet;
+    public short regActivo;
+    /*@OneToMany(cascade = CascadeType.ALL, mappedBy = "mttTmtId", fetch = FetchType.LAZY)
+    private Set<Mantenimiento> mantenimientoSet;*/
 
     public TipoMantenimiento() {
     }
@@ -162,14 +162,14 @@ public class TipoMantenimiento implements Serializable {
         this.regActivo = regActivo;
     }
 
-    @XmlTransient
+    /*@XmlTransient
     public Set<Mantenimiento> getMantenimientoSet() {
         return mantenimientoSet;
     }
 
     public void setMantenimientoSet(Set<Mantenimiento> mantenimientoSet) {
         this.mantenimientoSet = mantenimientoSet;
-    }
+    }*/
 
     @Override
     public int hashCode() {

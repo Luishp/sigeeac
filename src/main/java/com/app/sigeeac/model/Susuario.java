@@ -63,77 +63,77 @@ public class Susuario implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "USR_ID")
-    private Integer usrId;
+    public Integer usrId;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 6)
     @Column(name = "USR_CARNET")
-    private String usrCarnet;
+    public String usrCarnet;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 80)
     @Column(name = "USR_NOMBRE")
-    private String usrNombre;
+    public String usrNombre;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 80)
     @Column(name = "USR_APELLIDO")
-    private String usrApellido;
+    public String usrApellido;
     @Size(max = 10)
     @Column(name = "USR_DUI")
-    private String usrDui;
+    public String usrDui;
     @Size(max = 17)
     @Column(name = "USR_NIT")
-    private String usrNit;
+    public String usrNit;
     @Size(max = 20)
     @Column(name = "USR_TELEFONO")
-    private String usrTelefono;
+    public String usrTelefono;
     @Size(max = 20)
     @Column(name = "USR_CELULAR")
-    private String usrCelular;
+    public String usrCelular;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 100)
     @Column(name = "USR_CORREO_ELECTRONICO")
-    private String usrCorreoElectronico;
+    public String usrCorreoElectronico;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 6)
     @Column(name = "USR_USUARIO")
-    private String usrUsuario;
+    public String usrUsuario;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 100)
     @Column(name = "USR_CONTRASENIA")
-    private String usrContrasenia;
+    public String usrContrasenia;
     @Size(max = 250)
     @Column(name = "USR_FOTO")
-    private String usrFoto;
+    public String usrFoto;
     @Size(max = 4000)
     @Column(name = "USR_DESCRIPCION")
-    private String usrDescripcion;
+    public String usrDescripcion;
     @Basic(optional = false)
     @NotNull
     @Column(name = "FEC_CREA")
     @Temporal(TemporalType.TIMESTAMP)
-    private Date fecCrea;
+    public Date fecCrea;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 6)
     @Column(name = "USU_CREA")
-    private String usuCrea;
+    public String usuCrea;
     @Column(name = "FEC_MODI")
     @Temporal(TemporalType.TIMESTAMP)
-    private Date fecModi;
+    public Date fecModi;
     @Size(max = 6)
     @Column(name = "USU_MODI")
-    private String usuModi;
+    public String usuModi;
     @Basic(optional = false)
     @NotNull
     @Column(name = "REG_ACTIVO")
-    private short regActivo;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "cmpUsrId", fetch = FetchType.LAZY)
-    private Set<OrdenCompra> ordenCompraSet;
+    public short regActivo;
+    /*@OneToMany(cascade = CascadeType.ALL, mappedBy = "cmpUsrId", fetch = FetchType.LAZY)
+    private Set<OrdenCompra> ordenCompraSet;*/
     @JoinColumn(name = "USR_ING_ID", referencedColumnName = "ING_ID")
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
     private InstitucionGubernamental usrIngId;
@@ -305,14 +305,14 @@ public class Susuario implements Serializable {
         this.regActivo = regActivo;
     }
 
-    @XmlTransient
+    /*@XmlTransient
     public Set<OrdenCompra> getOrdenCompraSet() {
         return ordenCompraSet;
     }
 
     public void setOrdenCompraSet(Set<OrdenCompra> ordenCompraSet) {
         this.ordenCompraSet = ordenCompraSet;
-    }
+    }*/
 
     public InstitucionGubernamental getUsrIngId() {
         return usrIngId;

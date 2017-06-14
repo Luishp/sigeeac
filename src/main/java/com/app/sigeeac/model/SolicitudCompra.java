@@ -56,75 +56,75 @@ public class SolicitudCompra implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "SOL_ID")
-    private Integer solId;
+    public Integer solId;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 254)
     @Column(name = "SOL_NUMERO_SOLICITUD")
-    private String solNumeroSolicitud;
+    public String solNumeroSolicitud;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 254)
     @Column(name = "SOL_NOMBRE_SOLICITUD")
-    private String solNombreSolicitud;
+    public String solNombreSolicitud;
     @Basic(optional = false)
     @NotNull
     @Column(name = "SOL_CANTIDAD")
-    private BigInteger solCantidad;
+    public BigInteger solCantidad;
     @Basic(optional = false)
     @NotNull
     @Column(name = "SOL_FECHA_SOLICITUD")
     @Temporal(TemporalType.TIMESTAMP)
-    private Date solFechaSolicitud;
+    public Date solFechaSolicitud;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 50)
     @Column(name = "SOL_ESTADO")
-    private String solEstado;
+    public String solEstado;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 4000)
     @Column(name = "SOL_JUSTIFICACION")
-    private String solJustificacion;
+    public String solJustificacion;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 4000)
     @Column(name = "SOL_OBJETIVO")
-    private String solObjetivo;
+    public String solObjetivo;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 4000)
     @Column(name = "SOL_ESPECIFICACION_TECNICA")
-    private String solEspecificacionTecnica;
+    public String solEspecificacionTecnica;
     @Basic(optional = false)
     @NotNull
     @Column(name = "FEC_CREA")
     @Temporal(TemporalType.TIMESTAMP)
-    private Date fecCrea;
+    public Date fecCrea;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 6)
     @Column(name = "USU_CREA")
-    private String usuCrea;
+    public String usuCrea;
     @Column(name = "FEC_MODI")
     @Temporal(TemporalType.TIMESTAMP)
-    private Date fecModi;
+    public Date fecModi;
     @Size(max = 6)
     @Column(name = "USU_MODI")
-    private String usuModi;
+    public String usuModi;
     @Basic(optional = false)
     @NotNull
     @Column(name = "REG_ACTIVO")
-    private short regActivo;
+    public short regActivo;
     @JoinColumn(name = "SOL_CMP_ID", referencedColumnName = "CMP_ID")
     @ManyToOne(fetch = FetchType.LAZY)
-    private OrdenCompra solCmpId;
+    public OrdenCompra solCmpId;
     @JoinColumn(name = "SOL_TEQ_ID", referencedColumnName = "TEQ_ID")
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
-    private TipoEquipoElectrico solTeqId;
+    public TipoEquipoElectrico solTeqId;
     @JoinColumn(name = "SOL_UAD_ID", referencedColumnName = "UAD_ID")
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
-    private UnidadAdministrativa solUadId;
+    public UnidadAdministrativa solUadId;
 
     public SolicitudCompra() {
     }

@@ -50,46 +50,46 @@ public class AlertasMantenimiento implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "ALR_ID")
-    private Integer alrId;
+    public Integer alrId;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 80)
     @Column(name = "ALR_NOMBRE")
-    private String alrNombre;
+    public String alrNombre;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 20)
     @Column(name = "ALR_VALOR")
-    private String alrValor;
+    public String alrValor;
     @Size(max = 4000)
     @Column(name = "ALR_DESCRIPCION")
-    private String alrDescripcion;
+    public String alrDescripcion;
     @Basic(optional = false)
     @NotNull
     @Column(name = "FEC_CREA")
     @Temporal(TemporalType.TIMESTAMP)
-    private Date fecCrea;
+    public Date fecCrea;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 6)
     @Column(name = "USU_CREA")
-    private String usuCrea;
+    public String usuCrea;
     @Column(name = "FEC_MODI")
     @Temporal(TemporalType.TIMESTAMP)
-    private Date fecModi;
+    public Date fecModi;
     @Size(max = 6)
     @Column(name = "USU_MODI")
-    private String usuModi;
+    public String usuModi;
     @Basic(optional = false)
     @NotNull
     @Column(name = "REG_ACTIVO")
-    private short regActivo;
+    public short regActivo;
     @JoinColumn(name = "ALR_ING_ID", referencedColumnName = "ING_ID")
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
-    private InstitucionGubernamental alrIngId;
+    public InstitucionGubernamental alrIngId;
     @JoinColumn(name = "ALR_TEQ_ID", referencedColumnName = "TEQ_ID")
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
-    private TipoEquipoElectrico alrTeqId;
+    public TipoEquipoElectrico alrTeqId;
 
     public AlertasMantenimiento() {
     }

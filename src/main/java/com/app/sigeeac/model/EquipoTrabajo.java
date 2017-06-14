@@ -48,41 +48,41 @@ public class EquipoTrabajo implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "EQT_ID")
-    private Integer eqtId;
+    public Integer eqtId;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 80)
     @Column(name = "EQT_NOMBRE")
-    private String eqtNombre;
+    public String eqtNombre;
     @Size(max = 4000)
     @Column(name = "EQT_DESCRIPCION")
-    private String eqtDescripcion;
+    public String eqtDescripcion;
     @Basic(optional = false)
     @NotNull
     @Column(name = "FEC_CREA")
     @Temporal(TemporalType.TIMESTAMP)
-    private Date fecCrea;
+    public Date fecCrea;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 6)
     @Column(name = "USU_CREA")
-    private String usuCrea;
+    public String usuCrea;
     @Column(name = "FEC_MODI")
     @Temporal(TemporalType.TIMESTAMP)
-    private Date fecModi;
+    public Date fecModi;
     @Size(max = 6)
     @Column(name = "USU_MODI")
-    private String usuModi;
+    public String usuModi;
     @Basic(optional = false)
     @NotNull
     @Column(name = "REG_ACTIVO")
-    private short regActivo;
+    public short regActivo;
     @JoinColumn(name = "EQT_MTT_ID", referencedColumnName = "MTT_ID")
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
-    private Mantenimiento eqtMttId;
+    public Mantenimiento eqtMttId;
     @JoinColumn(name = "EQT_TEC_ID", referencedColumnName = "TEC_ID")
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
-    private Tecnico eqtTecId;
+    public Tecnico eqtTecId;
 
     public EquipoTrabajo() {
     }

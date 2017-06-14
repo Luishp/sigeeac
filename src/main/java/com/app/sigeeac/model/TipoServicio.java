@@ -51,37 +51,37 @@ public class TipoServicio implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "TPS_ID")
-    private Integer tpsId;
+    public Integer tpsId;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 80)
     @Column(name = "TPS_NOMBRE")
-    private String tpsNombre;
+    public String tpsNombre;
     @Size(max = 4000)
     @Column(name = "TPS_DESCRIPCION")
-    private String tpsDescripcion;
+    public String tpsDescripcion;
     @Basic(optional = false)
     @NotNull
     @Column(name = "FEC_CREA")
     @Temporal(TemporalType.TIMESTAMP)
-    private Date fecCrea;
+    public Date fecCrea;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 6)
     @Column(name = "USU_CREA")
-    private String usuCrea;
+    public String usuCrea;
     @Column(name = "FEC_MODI")
     @Temporal(TemporalType.TIMESTAMP)
-    private Date fecModi;
+    public Date fecModi;
     @Size(max = 6)
     @Column(name = "USU_MODI")
-    private String usuModi;
+    public String usuModi;
     @Basic(optional = false)
     @NotNull
     @Column(name = "REG_ACTIVO")
-    private short regActivo;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "sroTpsId", fetch = FetchType.LAZY)
-    private Set<ServicioOfrecido> servicioOfrecidoSet;
+    public short regActivo;
+    /*@OneToMany(cascade = CascadeType.ALL, mappedBy = "sroTpsId", fetch = FetchType.LAZY)
+    public Set<ServicioOfrecido> servicioOfrecidoSet;*/
 
     public TipoServicio() {
     }
@@ -162,14 +162,14 @@ public class TipoServicio implements Serializable {
         this.regActivo = regActivo;
     }
 
-    @XmlTransient
+    /*@XmlTransient
     public Set<ServicioOfrecido> getServicioOfrecidoSet() {
         return servicioOfrecidoSet;
     }
 
     public void setServicioOfrecidoSet(Set<ServicioOfrecido> servicioOfrecidoSet) {
         this.servicioOfrecidoSet = servicioOfrecidoSet;
-    }
+    }*/
 
     @Override
     public int hashCode() {

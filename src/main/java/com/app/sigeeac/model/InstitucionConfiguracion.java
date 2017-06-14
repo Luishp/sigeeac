@@ -48,35 +48,35 @@ public class InstitucionConfiguracion implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "INC_ID")
-    private Integer incId;
+    public Integer incId;
     @Column(name = "INC_DESCRIPCION")
-    private BigInteger incDescripcion;
+    public BigInteger incDescripcion;
     @Basic(optional = false)
     @NotNull
     @Column(name = "FEC_CREA")
     @Temporal(TemporalType.TIMESTAMP)
-    private Date fecCrea;
+    public Date fecCrea;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 6)
     @Column(name = "USU_CREA")
-    private String usuCrea;
+    public String usuCrea;
     @Column(name = "FEC_MODI")
     @Temporal(TemporalType.TIMESTAMP)
-    private Date fecModi;
+    public Date fecModi;
     @Size(max = 6)
     @Column(name = "USU_MODI")
-    private String usuModi;
+    public String usuModi;
     @Basic(optional = false)
     @NotNull
     @Column(name = "REG_ACTIVO")
-    private short regActivo;
+    public short regActivo;
     @JoinColumn(name = "INC_CFG_ID", referencedColumnName = "CFG_ID")
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
-    private ConfiguracionSistema incCfgId;
+    public ConfiguracionSistema incCfgId;
     @JoinColumn(name = "INC_ING_ID", referencedColumnName = "ING_ID")
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
-    private InstitucionGubernamental incIngId;
+    public InstitucionGubernamental incIngId;
 
     public InstitucionConfiguracion() {
     }

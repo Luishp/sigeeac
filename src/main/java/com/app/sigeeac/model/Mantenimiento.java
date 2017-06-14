@@ -56,63 +56,63 @@ public class Mantenimiento implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "MTT_ID")
-    private Integer mttId;
+    public Integer mttId;
     @Basic(optional = false)
     @NotNull
     @Column(name = "MTT_FEC_INICIO")
     @Temporal(TemporalType.TIMESTAMP)
-    private Date mttFecInicio;
+    public Date mttFecInicio;
     @Column(name = "MTT_FEC_FIN")
     @Temporal(TemporalType.TIMESTAMP)
-    private Date mttFecFin;
+    public Date mttFecFin;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 4000)
     @Column(name = "MTT_ESTADO_EQUIPO_INICIO")
-    private String mttEstadoEquipoInicio;
+    public String mttEstadoEquipoInicio;
     @Size(max = 4000)
     @Column(name = "MTT_ESTADO_EQUIPO_FIN")
-    private String mttEstadoEquipoFin;
+    public String mttEstadoEquipoFin;
     @Basic(optional = false)
     @NotNull
     @Column(name = "MTT_ESTADO_MANTENIMIENTO")
-    private short mttEstadoMantenimiento;
+    public short mttEstadoMantenimiento;
     @Size(max = 4000)
     @Column(name = "MTT_DESCRIPCION")
-    private String mttDescripcion;
+    public String mttDescripcion;
     @Basic(optional = false)
     @NotNull
     @Column(name = "FEC_CREA")
     @Temporal(TemporalType.TIMESTAMP)
-    private Date fecCrea;
+    public Date fecCrea;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 6)
     @Column(name = "USU_CREA")
-    private String usuCrea;
+    public String usuCrea;
     @Column(name = "FEC_MODI")
     @Temporal(TemporalType.TIMESTAMP)
-    private Date fecModi;
+    public Date fecModi;
     @Size(max = 6)
     @Column(name = "USU_MODI")
-    private String usuModi;
+    public String usuModi;
     @Basic(optional = false)
     @NotNull
     @Column(name = "REG_ACTIVO")
-    private short regActivo;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "arcMttId", fetch = FetchType.LAZY)
-    private Set<Archivo> archivoSet;
+    public short regActivo;
+    /*@OneToMany(cascade = CascadeType.ALL, mappedBy = "arcMttId", fetch = FetchType.LAZY)
+    private Set<Archivo> archivoSet;*/
     @JoinColumn(name = "MTT_EMP_ID", referencedColumnName = "EMP_ID")
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
-    private EmpresaServicio mttEmpId;
+    public EmpresaServicio mttEmpId;
     @JoinColumn(name = "MTT_EQE_ID", referencedColumnName = "EQE_ID")
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
-    private EquipoElectrico mttEqeId;
+    public EquipoElectrico mttEqeId;
     @JoinColumn(name = "MTT_TMT_ID", referencedColumnName = "TMT_ID")
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
-    private TipoMantenimiento mttTmtId;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "eqtMttId", fetch = FetchType.LAZY)
-    private Set<EquipoTrabajo> equipoTrabajoSet;
+    public TipoMantenimiento mttTmtId;
+    /*@OneToMany(cascade = CascadeType.ALL, mappedBy = "eqtMttId", fetch = FetchType.LAZY)
+    public Set<EquipoTrabajo> equipoTrabajoSet;*/
 
     public Mantenimiento() {
     }
@@ -227,14 +227,14 @@ public class Mantenimiento implements Serializable {
         this.regActivo = regActivo;
     }
 
-    @XmlTransient
+    /*@XmlTransient
     public Set<Archivo> getArchivoSet() {
         return archivoSet;
     }
 
     public void setArchivoSet(Set<Archivo> archivoSet) {
         this.archivoSet = archivoSet;
-    }
+    }*/
 
     public EmpresaServicio getMttEmpId() {
         return mttEmpId;
@@ -260,14 +260,14 @@ public class Mantenimiento implements Serializable {
         this.mttTmtId = mttTmtId;
     }
 
-    @XmlTransient
+    /*@XmlTransient
     public Set<EquipoTrabajo> getEquipoTrabajoSet() {
         return equipoTrabajoSet;
     }
 
     public void setEquipoTrabajoSet(Set<EquipoTrabajo> equipoTrabajoSet) {
         this.equipoTrabajoSet = equipoTrabajoSet;
-    }
+    }*/
 
     @Override
     public int hashCode() {

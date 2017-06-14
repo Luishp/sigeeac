@@ -47,33 +47,33 @@ public class ValorCaracteristica implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "VCA_ID")
-    private Integer vcaId;
+    public Integer vcaId;
     @Basic(optional = false)
     @NotNull
     @Column(name = "FEC_CREA")
     @Temporal(TemporalType.TIMESTAMP)
-    private Date fecCrea;
+    public Date fecCrea;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 6)
     @Column(name = "USU_CREA")
-    private String usuCrea;
+    public String usuCrea;
     @Column(name = "FEC_MODI")
     @Temporal(TemporalType.TIMESTAMP)
-    private Date fecModi;
+    public Date fecModi;
     @Size(max = 6)
     @Column(name = "USU_MODI")
-    private String usuModi;
+    public String usuModi;
     @Basic(optional = false)
     @NotNull
     @Column(name = "REG_ACTIVO")
-    private short regActivo;
+    public short regActivo;
     @JoinColumn(name = "VCA_EQE_ID", referencedColumnName = "EQE_ID")
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
-    private EquipoElectrico vcaEqeId;
+    public EquipoElectrico vcaEqeId;
     @JoinColumn(name = "VCA_LSC_ID", referencedColumnName = "LSC_ID")
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
-    private ListaCaracteristica vcaLscId;
+    public ListaCaracteristica vcaLscId;
 
     public ValorCaracteristica() {
     }

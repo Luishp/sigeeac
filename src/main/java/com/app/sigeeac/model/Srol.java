@@ -51,39 +51,39 @@ public class Srol implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "ROL_ID")
-    private Integer rolId;
+    public Integer rolId;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 80)
     @Column(name = "ROL_NOMBRE")
-    private String rolNombre;
+    public String rolNombre;
     @Size(max = 4000)
     @Column(name = "ROL_DESCRIPCION")
-    private String rolDescripcion;
+    public String rolDescripcion;
     @Basic(optional = false)
     @NotNull
     @Column(name = "FEC_CREA")
     @Temporal(TemporalType.TIMESTAMP)
-    private Date fecCrea;
+    public Date fecCrea;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 6)
     @Column(name = "USU_CREA")
-    private String usuCrea;
+    public String usuCrea;
     @Column(name = "FEC_MODI")
     @Temporal(TemporalType.TIMESTAMP)
-    private Date fecModi;
+    public Date fecModi;
     @Size(max = 6)
     @Column(name = "USU_MODI")
-    private String usuModi;
+    public String usuModi;
     @Basic(optional = false)
     @NotNull
     @Column(name = "REG_ACTIVO")
-    private short regActivo;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "perRolId", fetch = FetchType.LAZY)
+    public short regActivo;
+    /*@OneToMany(cascade = CascadeType.ALL, mappedBy = "perRolId", fetch = FetchType.LAZY)
     private Set<Spermiso> spermisoSet;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "usrRolId", fetch = FetchType.LAZY)
-    private Set<Susuario> susuarioSet;
+    private Set<Susuario> susuarioSet;*/
 
     public Srol() {
     }
@@ -164,7 +164,7 @@ public class Srol implements Serializable {
         this.regActivo = regActivo;
     }
 
-    @XmlTransient
+    /*@XmlTransient
     public Set<Spermiso> getSpermisoSet() {
         return spermisoSet;
     }
@@ -180,7 +180,7 @@ public class Srol implements Serializable {
 
     public void setSusuarioSet(Set<Susuario> susuarioSet) {
         this.susuarioSet = susuarioSet;
-    }
+    }*/
 
     @Override
     public int hashCode() {

@@ -51,44 +51,44 @@ public class ListaCaracteristica implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "LSC_ID")
-    private Integer lscId;
+    public Integer lscId;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 80)
     @Column(name = "LSC_NOMBRE")
-    private String lscNombre;
+    public String lscNombre;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 20)
     @Column(name = "LSC_TIPO_VALOR")
-    private String lscTipoValor;
+    public String lscTipoValor;
     @Size(max = 4000)
     @Column(name = "LSC_DESCRIPCION")
-    private String lscDescripcion;
+    public String lscDescripcion;
     @Basic(optional = false)
     @NotNull
     @Column(name = "FEC_CREA")
     @Temporal(TemporalType.TIMESTAMP)
-    private Date fecCrea;
+    public Date fecCrea;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 6)
     @Column(name = "USU_CREA")
-    private String usuCrea;
+    public String usuCrea;
     @Column(name = "FEC_MODI")
     @Temporal(TemporalType.TIMESTAMP)
-    private Date fecModi;
+    public Date fecModi;
     @Size(max = 6)
     @Column(name = "USU_MODI")
-    private String usuModi;
+    public String usuModi;
     @Basic(optional = false)
     @NotNull
     @Column(name = "REG_ACTIVO")
-    private short regActivo;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "vcaLscId", fetch = FetchType.LAZY)
-    private Set<ValorCaracteristica> valorCaracteristicaSet;
+    public short regActivo;
+    /*@OneToMany(cascade = CascadeType.ALL, mappedBy = "vcaLscId", fetch = FetchType.LAZY)
+    public Set<ValorCaracteristica> valorCaracteristicaSet;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "cteLscId", fetch = FetchType.LAZY)
-    private Set<Caracteristica> caracteristicaSet;
+    private Set<Caracteristica> caracteristicaSet;*/
 
     public ListaCaracteristica() {
     }
@@ -178,7 +178,7 @@ public class ListaCaracteristica implements Serializable {
         this.regActivo = regActivo;
     }
 
-    @XmlTransient
+    /*@XmlTransient
     public Set<ValorCaracteristica> getValorCaracteristicaSet() {
         return valorCaracteristicaSet;
     }
@@ -194,7 +194,7 @@ public class ListaCaracteristica implements Serializable {
 
     public void setCaracteristicaSet(Set<Caracteristica> caracteristicaSet) {
         this.caracteristicaSet = caracteristicaSet;
-    }
+    }*/
 
     @Override
     public int hashCode() {

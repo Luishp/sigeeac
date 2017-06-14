@@ -51,37 +51,37 @@ public class TipoCompra implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "TPC_ID")
-    private Integer tpcId;
+    public Integer tpcId;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 80)
     @Column(name = "TPC_NOMBRE")
-    private String tpcNombre;
+    public String tpcNombre;
     @Size(max = 4000)
     @Column(name = "TPC_DESCRIPCION")
-    private String tpcDescripcion;
+    public String tpcDescripcion;
     @Basic(optional = false)
     @NotNull
     @Column(name = "FEC_CREA")
     @Temporal(TemporalType.TIMESTAMP)
-    private Date fecCrea;
+    public Date fecCrea;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 6)
     @Column(name = "USU_CREA")
-    private String usuCrea;
+    public String usuCrea;
     @Column(name = "FEC_MODI")
     @Temporal(TemporalType.TIMESTAMP)
-    private Date fecModi;
+    public Date fecModi;
     @Size(max = 6)
     @Column(name = "USU_MODI")
-    private String usuModi;
+    public String usuModi;
     @Basic(optional = false)
     @NotNull
     @Column(name = "REG_ACTIVO")
-    private short regActivo;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "cmpTpcId", fetch = FetchType.LAZY)
-    private Set<OrdenCompra> ordenCompraSet;
+    public short regActivo;
+    /*@OneToMany(cascade = CascadeType.ALL, mappedBy = "cmpTpcId", fetch = FetchType.LAZY)
+    public Set<OrdenCompra> ordenCompraSet;*/
 
     public TipoCompra() {
     }
@@ -162,14 +162,14 @@ public class TipoCompra implements Serializable {
         this.regActivo = regActivo;
     }
 
-    @XmlTransient
+    /*@XmlTransient
     public Set<OrdenCompra> getOrdenCompraSet() {
         return ordenCompraSet;
     }
 
     public void setOrdenCompraSet(Set<OrdenCompra> ordenCompraSet) {
         this.ordenCompraSet = ordenCompraSet;
-    }
+    }*/
 
     @Override
     public int hashCode() {

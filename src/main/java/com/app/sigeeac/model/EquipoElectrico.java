@@ -56,69 +56,69 @@ public class EquipoElectrico implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "EQE_ID")
-    private Integer eqeId;
+    public Integer eqeId;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 20)
     @Column(name = "EQE_NUM_INVENTARIO")
-    private String eqeNumInventario;
+    public String eqeNumInventario;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 80)
     @Column(name = "EQE_MARCA")
-    private String eqeMarca;
+    public String eqeMarca;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 80)
     @Column(name = "EQE_MODELO")
-    private String eqeModelo;
+    public String eqeModelo;
     @Basic(optional = false)
     @NotNull
     @Column(name = "EQE_FEC_FABRICACION")
     @Temporal(TemporalType.TIMESTAMP)
-    private Date eqeFecFabricacion;
+    public Date eqeFecFabricacion;
     @Size(max = 250)
     @Column(name = "EQE_FOTO")
-    private String eqeFoto;
+    public String eqeFoto;
     @Size(max = 4000)
     @Column(name = "EQE_DESCRIPCION")
-    private String eqeDescripcion;
+    public String eqeDescripcion;
     @Basic(optional = false)
     @NotNull
     @Column(name = "FEC_CREA")
     @Temporal(TemporalType.TIMESTAMP)
-    private Date fecCrea;
+    public Date fecCrea;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 6)
     @Column(name = "USU_CREA")
-    private String usuCrea;
+    public String usuCrea;
     @Column(name = "FEC_MODI")
     @Temporal(TemporalType.TIMESTAMP)
-    private Date fecModi;
+    public Date fecModi;
     @Size(max = 6)
     @Column(name = "USU_MODI")
-    private String usuModi;
+    public String usuModi;
     @Basic(optional = false)
     @NotNull
     @Column(name = "REG_ACTIVO")
-    private short regActivo;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "vcaEqeId", fetch = FetchType.LAZY)
-    private Set<ValorCaracteristica> valorCaracteristicaSet;
+    public short regActivo;
+    /*@OneToMany(cascade = CascadeType.ALL, mappedBy = "vcaEqeId", fetch = FetchType.LAZY)
+    public Set<ValorCaracteristica> valorCaracteristicaSet;*/
     @JoinColumn(name = "EQE_EMP_ID", referencedColumnName = "EMP_ID")
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
-    private EmpresaServicio eqeEmpId;
+    public EmpresaServicio eqeEmpId;
     @JoinColumn(name = "EQE_CMD_ID", referencedColumnName = "CMD_ID")
     @ManyToOne(fetch = FetchType.LAZY)
-    private OrdenCompraDet eqeCmdId;
+    public OrdenCompraDet eqeCmdId;
     @JoinColumn(name = "EQE_TEQ_ID", referencedColumnName = "TEQ_ID")
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
-    private TipoEquipoElectrico eqeTeqId;
+    public TipoEquipoElectrico eqeTeqId;
     @JoinColumn(name = "EQE_UAD_ID", referencedColumnName = "UAD_ID")
     @ManyToOne(fetch = FetchType.LAZY)
-    private UnidadAdministrativa eqeUadId;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "mttEqeId", fetch = FetchType.LAZY)
-    private Set<Mantenimiento> mantenimientoSet;
+    public UnidadAdministrativa eqeUadId;
+    /*@OneToMany(cascade = CascadeType.ALL, mappedBy = "mttEqeId", fetch = FetchType.LAZY)
+    public Set<Mantenimiento> mantenimientoSet;*/
 
     public EquipoElectrico() {
     }
@@ -234,14 +234,14 @@ public class EquipoElectrico implements Serializable {
         this.regActivo = regActivo;
     }
 
-    @XmlTransient
+    /*@XmlTransient
     public Set<ValorCaracteristica> getValorCaracteristicaSet() {
         return valorCaracteristicaSet;
     }
 
     public void setValorCaracteristicaSet(Set<ValorCaracteristica> valorCaracteristicaSet) {
         this.valorCaracteristicaSet = valorCaracteristicaSet;
-    }
+    }*/
 
     public EmpresaServicio getEqeEmpId() {
         return eqeEmpId;
@@ -275,14 +275,14 @@ public class EquipoElectrico implements Serializable {
         this.eqeUadId = eqeUadId;
     }
 
-    @XmlTransient
+    /*@XmlTransient
     public Set<Mantenimiento> getMantenimientoSet() {
         return mantenimientoSet;
     }
 
     public void setMantenimientoSet(Set<Mantenimiento> mantenimientoSet) {
         this.mantenimientoSet = mantenimientoSet;
-    }
+    }*/
 
     @Override
     public int hashCode() {

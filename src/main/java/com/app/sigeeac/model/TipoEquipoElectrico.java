@@ -51,43 +51,43 @@ public class TipoEquipoElectrico implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "TEQ_ID")
-    private Integer teqId;
+    public Integer teqId;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 80)
     @Column(name = "TEQ_NOMBRE")
-    private String teqNombre;
+    public String teqNombre;
     @Size(max = 4000)
     @Column(name = "TEQ_DESCRIPCION")
-    private String teqDescripcion;
+    public String teqDescripcion;
     @Basic(optional = false)
     @NotNull
     @Column(name = "FEC_CREA")
     @Temporal(TemporalType.TIMESTAMP)
-    private Date fecCrea;
+    public Date fecCrea;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 6)
     @Column(name = "USU_CREA")
-    private String usuCrea;
+    public String usuCrea;
     @Column(name = "FEC_MODI")
     @Temporal(TemporalType.TIMESTAMP)
-    private Date fecModi;
+    public Date fecModi;
     @Size(max = 6)
     @Column(name = "USU_MODI")
-    private String usuModi;
+    public String usuModi;
     @Basic(optional = false)
     @NotNull
     @Column(name = "REG_ACTIVO")
-    private short regActivo;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "solTeqId", fetch = FetchType.LAZY)
-    private Set<SolicitudCompra> solicitudCompraSet;
+    public short regActivo;
+    /*@OneToMany(cascade = CascadeType.ALL, mappedBy = "solTeqId", fetch = FetchType.LAZY)
+    public Set<SolicitudCompra> solicitudCompraSet;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "cteTeqId", fetch = FetchType.LAZY)
-    private Set<Caracteristica> caracteristicaSet;
+    public Set<Caracteristica> caracteristicaSet;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "eqeTeqId", fetch = FetchType.LAZY)
-    private Set<EquipoElectrico> equipoElectricoSet;
+    public Set<EquipoElectrico> equipoElectricoSet;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "alrTeqId", fetch = FetchType.LAZY)
-    private Set<AlertasMantenimiento> alertasMantenimientoSet;
+    public Set<AlertasMantenimiento> alertasMantenimientoSet;*/
 
     public TipoEquipoElectrico() {
     }
@@ -168,7 +168,7 @@ public class TipoEquipoElectrico implements Serializable {
         this.regActivo = regActivo;
     }
 
-    @XmlTransient
+    /*@XmlTransient
     public Set<SolicitudCompra> getSolicitudCompraSet() {
         return solicitudCompraSet;
     }
@@ -202,7 +202,7 @@ public class TipoEquipoElectrico implements Serializable {
 
     public void setAlertasMantenimientoSet(Set<AlertasMantenimiento> alertasMantenimientoSet) {
         this.alertasMantenimientoSet = alertasMantenimientoSet;
-    }
+    }*/
 
     @Override
     public int hashCode() {
