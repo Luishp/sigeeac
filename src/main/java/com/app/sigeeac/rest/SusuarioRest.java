@@ -29,7 +29,7 @@ public class SusuarioRest {
     public List<Susuario> getAllUsuario(){
         return userService.findAll();
     }
-    @RequestMapping("getById/{id}")
+    @RequestMapping("/getById/{id}")
     public Susuario getUsuarioById(@PathVariable("id") String id){
         return userService.findOne(Integer.parseInt(id));
     }

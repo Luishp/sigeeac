@@ -29,7 +29,7 @@ public class AlertasMantenimientoRest {
     public List<AlertasMantenimiento> getAllAlertas(){
         return amService.findAll();
     }
-    @RequestMapping("getById/{id}")
+    @RequestMapping("/getById/{id}")
     public AlertasMantenimiento getAlertaById(@PathVariable("id") String id){
         return amService.findOne(Integer.parseInt(id));
     }

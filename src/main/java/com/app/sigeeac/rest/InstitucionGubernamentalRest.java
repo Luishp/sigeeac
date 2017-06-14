@@ -29,7 +29,7 @@ public class InstitucionGubernamentalRest {
     public List<InstitucionGubernamental> getAllGobs(){
         return insGobService.findAll();
     }
-    @RequestMapping("getById/{id}")
+    @RequestMapping("/getById/{id}")
     public InstitucionGubernamental getGobById(@PathVariable("id") String id){
         return insGobService.findOne(Integer.parseInt(id));
     }

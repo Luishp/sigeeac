@@ -29,7 +29,7 @@ public class SpermisoRest {
     public List<Spermiso> getAllPermiso(){
         return spService.findAll();
     }
-    @RequestMapping("getById/{id}")
+    @RequestMapping("/getById/{id}")
     public Spermiso getPermisoById(@PathVariable("id") String id){
         return spService.findOne(Integer.parseInt(id));
     }

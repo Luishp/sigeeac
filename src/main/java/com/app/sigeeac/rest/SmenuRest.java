@@ -31,7 +31,7 @@ public class SmenuRest {
     public List<Smenu> getAllMenus(){
         return smenuService.findAll();
     }
-    @RequestMapping("getById/{id}")
+    @RequestMapping("/getById/{id}")
     public Smenu getMenuById(@PathVariable("id") String id){
         return smenuService.findOne(Integer.parseInt(id));
     }

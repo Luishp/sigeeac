@@ -5,8 +5,8 @@
  */
 package com.app.sigeeac.rest;
 
-import com.app.sigeeac.model.Archivo;
-import com.app.sigeeac.service.ArchivoService;
+import com.app.sigeeac.model.ConfiguracionSistema;
+import com.app.sigeeac.service.ConfiguracionSistemaService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,29 +20,29 @@ import org.springframework.web.bind.annotation.RestController;
  * @author luish
  */
 @RestController
-@RequestMapping("/archivo")
-public class ArchivoRest {
+@RequestMapping("/configSystem")
+public class ConfiguracionSistemaRest {
     @Autowired
-    private ArchivoService archivoService;
+    private ConfiguracionSistemaService myService;
     
     @RequestMapping("/all")
-    public List<Archivo> getAllArchivo(){
-        return archivoService.findAll();
+    public List<ConfiguracionSistema> getAllConfiguracionSistema(){
+        return myService.findAll();
     }
     @RequestMapping("/getById/{id}")
-    public Archivo getArchivoById(@PathVariable("id") String id){
-        return archivoService.findOne(Integer.parseInt(id));
+    public ConfiguracionSistema getConfiguracionSistemaById(@PathVariable("id") String id){
+        return myService.findOne(Integer.parseInt(id));
     }
     @RequestMapping(method=RequestMethod.POST, value="/save")
-    public void addArchivo(@RequestBody Archivo archivo){
-        archivoService.save(archivo);
+    public void addConfiguracionSistema(@RequestBody ConfiguracionSistema newRecord){
+        myService.save(newRecord);
     }
     @RequestMapping(method=RequestMethod.PUT, value="/update/{id}")
-    public void updateArchivo(@RequestBody Archivo archivo, @PathVariable("id") String id){
-        archivoService.save(archivo);
+    public void updateConfiguracionSistema(@RequestBody ConfiguracionSistema record, @PathVariable("id") String id){
+        myService.save(record);
     }
     @RequestMapping(method=RequestMethod.DELETE, value="/delete/{id}")
-    public void deleteArchivo(@PathVariable("id") String id){
-        archivoService.delete(Integer.parseInt(id));
+    public void deleteConfiguracionSistema(@PathVariable("id") String id){
+        myService.delete(Integer.parseInt(id));
     }
 }

@@ -29,7 +29,7 @@ public class SrolRest {
     public List<Srol> getAllGobs(){
         return srolService.findAll();
     }
-    @RequestMapping("getById/{id}")
+    @RequestMapping("/getById/{id}")
     public Srol getRolById(@PathVariable("id") String id){
         return srolService.findOne(Integer.parseInt(id));
     }

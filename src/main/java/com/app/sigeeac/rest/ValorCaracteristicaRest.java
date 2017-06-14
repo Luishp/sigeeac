@@ -5,8 +5,8 @@
  */
 package com.app.sigeeac.rest;
 
-import com.app.sigeeac.model.Archivo;
-import com.app.sigeeac.service.ArchivoService;
+import com.app.sigeeac.model.ValorCaracteristica;
+import com.app.sigeeac.service.ValorCaracteristicaService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,29 +20,29 @@ import org.springframework.web.bind.annotation.RestController;
  * @author luish
  */
 @RestController
-@RequestMapping("/archivo")
-public class ArchivoRest {
+@RequestMapping("/valorCaracteristica")
+public class ValorCaracteristicaRest {
     @Autowired
-    private ArchivoService archivoService;
+    private ValorCaracteristicaService myService;
     
     @RequestMapping("/all")
-    public List<Archivo> getAllArchivo(){
-        return archivoService.findAll();
+    public List<ValorCaracteristica> getAllValorCaracteristica(){
+        return myService.findAll();
     }
     @RequestMapping("/getById/{id}")
-    public Archivo getArchivoById(@PathVariable("id") String id){
-        return archivoService.findOne(Integer.parseInt(id));
+    public ValorCaracteristica getValorCaracteristicaById(@PathVariable("id") String id){
+        return myService.findOne(Integer.parseInt(id));
     }
     @RequestMapping(method=RequestMethod.POST, value="/save")
-    public void addArchivo(@RequestBody Archivo archivo){
-        archivoService.save(archivo);
+    public void addValorCaracteristica(@RequestBody ValorCaracteristica newRecord){
+        myService.save(newRecord);
     }
     @RequestMapping(method=RequestMethod.PUT, value="/update/{id}")
-    public void updateArchivo(@RequestBody Archivo archivo, @PathVariable("id") String id){
-        archivoService.save(archivo);
+    public void updateValorCaracteristica(@RequestBody ValorCaracteristica record, @PathVariable("id") String id){
+        myService.save(record);
     }
     @RequestMapping(method=RequestMethod.DELETE, value="/delete/{id}")
-    public void deleteArchivo(@PathVariable("id") String id){
-        archivoService.delete(Integer.parseInt(id));
+    public void deleteValorCaracteristica(@PathVariable("id") String id){
+        myService.delete(Integer.parseInt(id));
     }
 }

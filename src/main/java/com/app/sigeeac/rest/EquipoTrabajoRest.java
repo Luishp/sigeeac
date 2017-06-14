@@ -5,8 +5,8 @@
  */
 package com.app.sigeeac.rest;
 
-import com.app.sigeeac.model.Archivo;
-import com.app.sigeeac.service.ArchivoService;
+import com.app.sigeeac.model.EquipoTrabajo;
+import com.app.sigeeac.service.EquipoTrabajoService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,29 +20,29 @@ import org.springframework.web.bind.annotation.RestController;
  * @author luish
  */
 @RestController
-@RequestMapping("/archivo")
-public class ArchivoRest {
+@RequestMapping("/equipoTrabajo")
+public class EquipoTrabajoRest {
     @Autowired
-    private ArchivoService archivoService;
+    private EquipoTrabajoService myService;
     
     @RequestMapping("/all")
-    public List<Archivo> getAllArchivo(){
-        return archivoService.findAll();
+    public List<EquipoTrabajo> getAllEquipoTrabajo(){
+        return myService.findAll();
     }
     @RequestMapping("/getById/{id}")
-    public Archivo getArchivoById(@PathVariable("id") String id){
-        return archivoService.findOne(Integer.parseInt(id));
+    public EquipoTrabajo getEquipoTrabajoById(@PathVariable("id") String id){
+        return myService.findOne(Integer.parseInt(id));
     }
     @RequestMapping(method=RequestMethod.POST, value="/save")
-    public void addArchivo(@RequestBody Archivo archivo){
-        archivoService.save(archivo);
+    public void addEquipoTrabajo(@RequestBody EquipoTrabajo newRecord){
+        myService.save(newRecord);
     }
     @RequestMapping(method=RequestMethod.PUT, value="/update/{id}")
-    public void updateArchivo(@RequestBody Archivo archivo, @PathVariable("id") String id){
-        archivoService.save(archivo);
+    public void updateEquipoTrabajo(@RequestBody EquipoTrabajo record, @PathVariable("id") String id){
+        myService.save(record);
     }
     @RequestMapping(method=RequestMethod.DELETE, value="/delete/{id}")
-    public void deleteArchivo(@PathVariable("id") String id){
-        archivoService.delete(Integer.parseInt(id));
+    public void deleteEquipoTrabajo(@PathVariable("id") String id){
+        myService.delete(Integer.parseInt(id));
     }
 }
